@@ -1,9 +1,4 @@
 require 'pry'
-holiday_hash.each do |season, holiday|
-  if season == :winter 
-    holiday.each do |supply|
-      
-
 def second_supply_for_fourth_of_july(holiday_hash)
   holiday_hash[:summer][:fourth_of_july][1]
   # given that holiday_hash looks like this: 
@@ -50,7 +45,15 @@ end
 
 def all_winter_holiday_supplies(holiday_hash)
   # return an array of all of the supplies that are used in the winter season
-  holiday_hash[:winter].values
+  holiday_hash.each do |season, holiday|
+  array = []
+  if season == :winter 
+    holiday.each do |supply|
+      array << supply
+    end
+    array 
+  end
+
 end
 
 def all_supplies_in_holidays(holiday_hash)
